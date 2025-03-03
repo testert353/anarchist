@@ -159,9 +159,9 @@
         function copyToClipboard() {
             const textToCopy = 'loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Frostware-Blade-Ball-Fixed-24639"))()';
             navigator.clipboard.writeText(textToCopy).then(() => {
-                alert("Loadstring copied to clipboard!");
+                console.log('complete');
             }).catch((err) => {
-                console.error('Error copying text: ', err);
+                alert('Error, copy it manually.');
             });
         }
     </script>
