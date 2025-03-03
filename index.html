@@ -4,56 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anarchist's Archive</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
+        /* Base Styles */
         body {
-            background-color: #000;
+            background: linear-gradient(135deg, #0f0, #ff00ff, #00bfff);
+            background-size: 600% 600%;
+            animation: gradient 10s ease infinite;
             color: #0f0;
             font-family: 'Courier New', Courier, monospace;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
+        
+        /* Header & Footer */
         header, footer {
             width: 100%;
             text-align: center;
             padding: 10px 0;
-            background-color: #111;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
             border-bottom: 2px solid #0f0;
+            position: fixed;
+            top: 0;
+            z-index: 10;
         }
+
+        footer {
+            bottom: 0;
+            top: unset;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px rgba(0,255,0,0.6), 0 0 20px rgba(0,255,0,0.8);
+        }
+
+        /* Container Styles */
         .container {
             width: 80%;
             max-width: 1200px;
-            margin: 20px;
+            margin: 100px auto 100px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
         }
+
+        /* Software Item Styles */
         .software-item {
-            margin: 10px 0;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #0f0;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .software-item:hover {
+            transform: scale(1.05);
+        }
+
+        .software-item h2 {
+            color: #ff00ff;
+            font-size: 1.8em;
+            text-shadow: 0 0 10px rgba(255,0,255,0.6), 0 0 20px rgba(255,0,255,0.8);
+        }
+
+        /* Download Button Styles */
+        a.download-btn {
+            display: inline-block;
+            background-color: #0f0;
+            padding: 10px 20px;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        a.download-btn:hover {
+            background-color: #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+        }
+
+        /* Copy Button */
+        .copy-btn {
+            background-color: #000;
+            color: #fff;
+            border: 2px solid #0f0;
             padding: 10px;
-            border: 1px solid #0f0;
-            background-color: #111;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+
+        .copy-btn i {
+            font-size: 1.2em;
+        }
+
+        /* Gradient Animation */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Anarchist's Archive</h1>
     </header>
+
     <div class="container">
         <div class="software-item">
             <h2>Solara V3</h2>
             <p>Working as of 3/2/2025, does show up as a virus.</p>
-            <a href="Bootstrapper.tar">Download</a>
+            <a href="Bootstrapper.tar" class="download-btn">Download</a>
         </div>
 
-        <!-- Add more software items as needed -->
         <div class="software-item">
             <h2>OP Blade Ball Script</h2>
             <p>Working as of 3/2/2025, with Solara V3.</p>
-            <i> loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Frostware-Blade-Ball-Fixed-24639"))() </i>
+            <div class="copy-btn" onclick="copyToClipboard()">
+                <i class="material-icons">content_copy</i> Copy Loadstring
+            </div>
+            <p><i>loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Frostware-Blade-Ball-Fixed-24639"))()</i></p>
         </div>
+
         <!-- Add more software items as needed -->
+
     </div>
+
     <footer>
         <p>&copy; 2025 Anarchist's Archive</p>
     </footer>
+
+    <script>
+        function copyToClipboard() {
+            const textToCopy = 'loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Frostware-Blade-Ball-Fixed-24639"))()';
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert("Loadstring copied to clipboard!");
+            }).catch((err) => {
+                console.error('Error copying text: ', err);
+            });
+        }
+    </script>
+
 </body>
 </html>
