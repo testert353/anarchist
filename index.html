@@ -53,6 +53,8 @@
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+            overflow-y: auto; /* Make the container scrollable */
+            max-height: 70vh; /* Limit the height to allow scrolling */
         }
 
         /* Software Item Styles */
@@ -62,11 +64,12 @@
             border: 2px solid #0f0;
             background-color: rgba(0, 0, 0, 0.8);
             border-radius: 8px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, margin-top 0.3s ease;
         }
 
         .software-item:hover {
             transform: scale(1.05);
+            margin-top: -5px; /* Slight overlap when hovered */
         }
 
         .software-item h2 {
@@ -147,6 +150,16 @@
             <p><i>loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Frostware-Blade-Ball-Fixed-24639"))()</i></p>
         </div>
 
+        <!-- New Software Item -->
+        <div class="software-item">
+            <h2>AutoRob V5</h2>
+            <p>Working as of 3/2/2025.</p>
+            <div class="copy-btn" onclick="copyToClipboardAutoRob()">
+                <i class="material-icons">content_copy</i> Copy Loadstring
+            </div>
+            <p><i>loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV5'))()</i></p>
+        </div>
+
         <!-- Add more software items as needed -->
 
     </div>
@@ -158,6 +171,16 @@
     <script>
         function copyToClipboard() {
             const textToCopy = 'loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Frostware-Blade-Ball-Fixed-24639"))()';
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                console.log('complete');
+            }).catch((err) => {
+                alert('Error, copy it manually.');
+            });
+        }
+
+        // Copy function for AutoRob V5
+        function copyToClipboardAutoRob() {
+            const textToCopy = "loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV5'))()";
             navigator.clipboard.writeText(textToCopy).then(() => {
                 console.log('complete');
             }).catch((err) => {
