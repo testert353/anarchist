@@ -3,9 +3,9 @@ if game.PlaceId == 87854376962069 then
     local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
     local Window = Rayfield:CreateWindow({
-        Name = "⚡ A Wesley Script | The $1,000,000 Glass Bridge",
+        Name = "🔥 Wesley Hub | The $1,000,000 Glass Bridge",
         Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-        LoadingTitle = "Rayfield Interface Suite",
+        LoadingTitle = "Wesley Hub",
         LoadingSubtitle = "by Wesley",
         Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
      
@@ -26,9 +26,9 @@ if game.PlaceId == 87854376962069 then
      
         KeySystem = false, -- Set this to true to use our key system
         KeySettings = {
-           Title = "Untitled",
+           Title = "Wesley Hub Key System",
            Subtitle = "Key System",
-           Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+           Note = "Our key system is supposed to be disabled, if you see a key system you are running a skidded version of this script.", -- Use this to tell the user how to get a key
            FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
            SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
            GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
@@ -111,6 +111,11 @@ if game.PlaceId == 87854376962069 then
         Name = "Infinite Yield",
         Callback = function()
       loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+Rayfield:Notify({
+   Title = "Notice",
+   Content = "You may need to load Infinite Yield twice.",
+   Duration = 6.5,
+})
         -- The function that takes place when the button is pressed
         end,
      })
@@ -118,7 +123,7 @@ if game.PlaceId == 87854376962069 then
         Name = "Instant Win",
         Callback = function()
       loadstring(game:HttpGet("https://anarchist.pages.dev/wesleyhub1.txt",true))()
-        -- The function that takes place when the button is pressed
+        -- The function that takes place when the button is pressed.
         end,
      })
 end
