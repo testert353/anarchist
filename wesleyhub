@@ -126,6 +126,20 @@ Rayfield:Notify({
         -- The function that takes place when the button is pressed.
         end,
      })
+              local Button = AutoTab:CreateButton({
+        Name = "Front Man",
+        Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/testert353/anarchist/refs/heads/main/wesleyhub2.txt",true))()
+        -- The function that takes place when the button is pressed.
+        end,
+     })
+                   local Button = AutoTab:CreateButton({
+        Name = "Kill Everyone",
+        Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/testert353/anarchist/refs/heads/main/wesleyhub3.txt",true))()
+        -- The function that takes place when the button is pressed.
+        end,
+     })
 end
 
 
