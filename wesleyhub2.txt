@@ -1,0 +1,5 @@
+local args = {
+    [1] = "a=Instance.new('Model',workspace)a.Name='TBuqRrtmjibzOcqRDlJzFMEpYr'"
+}
+
+game:GetService("ReplicatedStorage").DailyRewardsRemotes.VerifyFront:FireServer(unpack(args))
