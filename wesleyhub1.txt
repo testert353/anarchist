@@ -1,0 +1,5 @@
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("ReplicatedStorage").Loader_Trophy:FireServer(unpack(args))
