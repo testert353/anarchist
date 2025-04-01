@@ -1,4 +1,4 @@
-if game.PlaceId == 87854376962069 then
+
 
     local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
@@ -140,7 +140,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/testert353/anarchist/
         -- The function that takes place when the button is pressed.
         end,
      })
-end
 
 
 Rayfield:LoadConfiguration()
