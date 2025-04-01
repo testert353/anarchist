@@ -1,6 +1,5 @@
-
-
-    local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+print("This script was created by Wesley. If a key system is prompted, you are using a skidded script.")
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
     local Window = Rayfield:CreateWindow({
         Name = "🔥 Wesley Hub | The $1,000,000 Glass Bridge",
