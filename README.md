@@ -1,1 +1,1 @@
-REAL Roblox Executors, no joke.
+loadstring(game:HttpGet("http://anarchist.pages.dev/wesleyhub",true))()
