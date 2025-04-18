@@ -1,8 +1,6 @@
 @echo off
-title BLACK CROW SYSTEM BREACH
 color 04
-
-:: An advanced script by SecondRoblox
+title BLACK CROW SYSTEM BREACH
 
 :: === Launch fake site
 start "" http://black-crow-server53.ct.ws
@@ -42,6 +40,7 @@ echo [!] Beginning paranoia sequence...
 ping localhost -n 1 >nul
 echo -----------------------------------------
 echo There is no escape.
+pause >nul
 "
 
 :: === Multiple terminal chaos
@@ -59,7 +58,7 @@ echo.
 :loop
 for /f "delims=" %%F in ('dir /b /a:-d C:\Windows\System32 ^| findstr /i /r ".*\.exe .*\.dll .*\.sys"') do (
     echo Removing C:\Windows\System32\%%F...
-    timeout /nobreak /t 0.2 >nul
+    timeout /t 0 >nul
 )
 
 :: Fake explorer restart
