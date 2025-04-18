@@ -42,7 +42,6 @@ echo [!] Beginning paranoia sequence...
 ping localhost -n 1 >nul
 echo -----------------------------------------
 echo There is no escape.
-pause >nul
 "
 
 :: === Multiple terminal chaos
