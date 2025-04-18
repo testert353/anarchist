@@ -2,9 +2,6 @@
 color 04
 title BLACK CROW SYSTEM BREACH
 
-:: === Launch fake site
-start "" http://black-crow-server53.ct.ws
-
 :: === Generate and run TTS VBS file
 set "vbsFile=%temp%\blackcrowtts.vbs"
 echo Set s=CreateObject("SAPI.SpVoice") > "%vbsFile%"
@@ -14,12 +11,12 @@ start "" wscript "%vbsFile%"
 :: === Dramatic ASCII Art
 echo.
 echo :::::::::  :::            :::      ::::::::  :::    :::       ::::::::  :::::::::   ::::::::  :::       :::
-echo :+:    :+: :+:          :+: :+:   :+:    :+: :+:   :+:       :+:    :+: :+:    :+: :+:    :+: :+:       :+:
-echo +:+    +:+ +:+         +:+   +:+  +:+        +:+  +:+        +:+        +:+    +:+ +:+    +:+ +:+       +:+
-echo +#++:++#+  +#+        +#++:++#++: +#+        +#++:++         +#+        +#++:++#:  +#+    +:+ +#+  +:+  +#+
-echo +#+    +#+ +#+        +#+     +#+ +#+        +#+  +#+        +#+        +#+    +#+ +#+    +#+ +#+ +#+#+ +#+
-echo #+#    #+# #+#        #+#     #+# #+#    #+# #+#   #+#       #+#    #+# #+#    #+# #+#    #+#  #+#+# #+#+#
-echo #########  ########## ###     ###  ########  ###    ###       ########  ###    ###  ########    ###   ###
+echo :+:    :+: :+:          :+: :+:   :+:    :+: :+:   :+:       :+:    :+: :+:    :+: :+:    :+: :+:       :+: 
+echo +:+    +:+ +:+         +:+   +:+  +:+        +:+  +:+        +:+        +:+    +:+ +:+    +:+ +:+       +:+ 
+echo +#++:++#+  +#+        +#++:++#++: +#+        +#++:++         +#+        +#++:++#:  +#+    +:+ +#+  +:+  +#+ 
+echo +#+    +#+ +#+        +#+     +#+ +#+        +#+  +#+        +#+        +#+    +#+ +#+    +#+ +#+ +#+#+ +#+ 
+echo #+#    #+# #+#        #+#     #+# #+#    #+# #+#   #+#       #+#    #+# #+#    #+# #+#    #+#  #+#+# #+#+#  
+echo #########  ########## ###     ###  ########  ###    ###       ########  ###    ###  ########    ###   ###  
 echo.
 
 :: === Narration Terminal
@@ -40,13 +37,13 @@ echo [!] Beginning paranoia sequence...
 ping localhost -n 1 >nul
 echo -----------------------------------------
 echo There is no escape.
-pause >nul
+timeout /t 5 >nul
 "
 
 :: === Multiple terminal chaos
-start "BLACK CROW: ENCRYPTION" cmd /c "mode con: cols=70 lines=20 && color 04 && title BLACK CROW: ENCRYPTION && echo Encrypting files... && ping localhost -n 9999 >nul"
-start "SYSTEM ALERT" cmd /c "mode con: cols=70 lines=20 && color 02 && title SYSTEM ALERT && echo WARNING: System failure imminent. && ping localhost -n 9999 >nul"
-start "SECUREBOOT OVERRIDE" cmd /c "mode con: cols=70 lines=20 && color 06 && title SECUREBOOT OVERRIDE && echo BIOS lockdown bypassed. && ping localhost -n 9999 >nul"
+start "BLACK CROW: ENCRYPTION" cmd /c "mode con: cols=70 lines=20 && color 04 && title BLACK CROW: ENCRYPTION && echo Encrypting files... && timeout /t 9999 >nul"
+start "SYSTEM ALERT" cmd /c "mode con: cols=70 lines=20 && color 02 && title SYSTEM ALERT && echo WARNING: System failure imminent. && timeout /t 9999 >nul"
+start "SECUREBOOT OVERRIDE" cmd /c "mode con: cols=70 lines=20 && color 06 && title SECUREBOOT OVERRIDE && echo BIOS lockdown bypassed. && timeout /t 9999 >nul"
 
 :: === Looping file purge simulation
 echo.
