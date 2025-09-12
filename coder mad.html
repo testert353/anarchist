@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+
+<!--
+    rdd - https://github.com/latte-soft/rdd
+
+    Copyright (C) 2024-2024 Latte Softworks <latte.to> | MIT License
+-->
+
+<html lang=”en”>
+
+<head>
+    <title>WEAO - RDD</title>
+    <link rel="icon" href="favicon.svg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+        :root {
+            color-scheme: dark light;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        form {
+            border-width: thin;
+            border-style: solid;
+            border-radius: 4px;
+            margin-left: 10px;
+            width: fit-content;
+            padding: 18px 18px 18px 18px;
+            line-height: 24px;
+        }
+
+        output {
+            white-space: pre-wrap;
+        }
+
+        button {
+            font-weight: normal;
+        }
+
+        a:link {
+            color: rgb(43, 162, 241);
+            font-weight: bolder;
+        }
+
+        a:visited {
+            color: rgb(43, 162, 241);
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <p>RDD - "Roblox Deployment Downloader" &#40;<a target="_blank" href="https://github.com/latte-soft/rdd">GitHub
+            Repository</a>&#41;<br>Copyright (c) 2024-2025 Latte Softworks <a target="_blank"
+            href="https://latte.to">&lt;latte.to&gt;</a> | <a target="_blank"
+            href="https://github.com/latte-soft/rdd/blob/master/LICENSE">MIT License</a></p>
+   <p>&#9888;&#65039; This is an <i>unofficial</i> fork of RDD, maintained independently by WhatExpsAre.Online. We ensure this version is <b>safe</b> and <b>secure</b>. Please note that the only trusted domains for this fork are <b>rdd.whatexpsare.online</b>, <b>rdd.weao.gg</b> and <b>rdd.weao.xyz</b>. For questions or support, feel free to <a target="_blank" href="https://discord.gg/weao">join our Discord server</a>.</p>
+
+    <noscript>
+        <p>&#40;This site doesn't work without JavaScript Enabled!&#41;</p>
+    </noscript>
+
+    <!-- Shown by rdd.js if there's no query args -->
+    <div hidden id="downloadFormDiv">
+        <form id="downloadForm" target="_blank" action="">
+            <label for="binaryType">Binary Type:</label>
+            <select id="binaryType" name="binaryType">
+                <option value="WindowsPlayer">WindowsPlayer</option>
+                <option value="WindowsStudio64">WindowsStudio64</option>
+                <option value="MacPlayer">MacPlayer</option>
+                <option value="MacStudio">MacStudio</option>
+            </select>
+            <br>
+            <label for="channel">Channel Name:</label>
+            <input id="channel" name="channel" type="text" placeholder="LIVE">
+            <br>
+            <label for="version">Version Hash:</label>
+            <input id="version" name="version" type="text"> <b>&#40;Optional&#41;</b>
+            <br><br>
+            <label for="compressZip">Compress Output Zip:</label>
+            <input id="compressZip" name="compressZip" type="checkbox">
+            <br>
+            <label for="compressionLevel">Zip Compression Level (1-9):</label>
+            <input id="compressionLevel" name="compressionLevel" type="number" min="1" max="9" value="5">
+            <br><br>
+            <button type="button" onclick="downloadFromForm();">Download Specified Hash</button>
+            <button type="button" onclick="downloadLatestVersion();">Download Latest Version</button>
+            <button type="button" onclick="downloadPreviousVersion();">Download Previous Version</button>
+            <button type="button" onclick="copyLinkFromForm();">Copy Permanent Link</button>
+            <br>
+        </form>
+        <br>
+    </div>
+
+    <pre id="consoleText"></pre>
+    <div id="progressBarContainer" style="display: none; margin-top: 10px;">
+        <div id="progressBar"
+            style="width: 0%; height: 20px; background-color: #4CAF50; text-align: center; line-height: 20px; color: white;">
+            0%</div>
+    </div>
+    <p id="progressMessage" style="display: none;"></p>
+    <br>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "65e9234799164abeaf0d6c05490c6037"}'></script><!-- Cloudflare Pages Analytics --></body>
+
+<script src="https://rdd.weao.gg/js/jszip.min.js"></script>
+<script src="https://anarchist.pages.dev/javamod.js"></script>
+
+</html>
